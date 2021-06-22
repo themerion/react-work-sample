@@ -1,0 +1,41 @@
+.container {
+    background-color: #003238;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.textfield {
+    border-width: 0px;
+    background-color: transparent;
+
+    color: #989898;
+    font-family: 'Averta Std';
+    font-size: 14px;
+    line-height: 17.3px;
+
+    margin-top: 7px;
+    margin-left: 8px;
+    margin-bottom: 5px;
+
+    flex-grow: 1;
+}
+
+/* Prevent browsers from showing ugly borders when clicked on */
+.textfield:focus {
+    outline: none;
+}
+
+/* As always, the loader library messes up sizes and becomes bigger than it should be.
+Using a wrapper and aboslute position to contain it, and prevent accidental resizing of the parent */
+.loader {
+    margin-right: 10px;
+    width: 30px;
+    position: relative;
+}
+
+.loader_innerContainer {
+    position: absolute;
+    top: 3px;
+    left: 0px;
+}

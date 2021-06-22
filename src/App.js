@@ -4,14 +4,13 @@ import _ from "underscore";
 
 // Components
 import CardList from "./components/CardList/CardList";
-import Loader from "./components/Loader/Loader";
-import SearchField from "./components/SearchField/SearchField";
+import LoadingTextField from "./components/LoadingTextField/LoadingTextField";
 
 // Functions
 import { cardSearch } from "./services/CardSearchService";
 import { mapCardSearchesToCards } from "./mappers/mapCardSearchesToCards";
 
-import "./App.css";
+import styles from "./App.module.css";
 
 
 function App() {
@@ -23,6 +22,7 @@ function App() {
         cards: [],
         searchError: false,
         hasSearched: false,
+        isSearching: false
     };
 
     const [state, mergeState] = useReducer(
@@ -51,11 +51,9 @@ function App() {
     }
 
     return (
-        <div className="App">
-            <div>
-                <SearchField onChange={searchFieldUpdated_Debounced} />
-                {state.isSearching && <Loader />}
-            </div>
+        <div className={styles.App}>
+            <div className={styles.textField_title}>Search</div>
+            <LoadingTextField onChange={searchFieldUpdated_Debounced} isLoading={state.isSearching}/>
 
             {noContentMsg}
             {showCards && <CardList cards={state.cards} />}

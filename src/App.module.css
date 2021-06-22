@@ -1,0 +1,16 @@
+.App {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  max-width: 276px;
+}
+
+.textField_title {
+  font-family: 'Averta Std';
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17.3px;
+  color: white;
+
+  margin-bottom: 5px;
+}
