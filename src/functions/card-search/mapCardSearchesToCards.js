@@ -1,3 +1,9 @@
+/**
+ * 
+ * @param {*} searches The response from a cardSearch request.
+ * @returns Data fit for sending to a CardList component.
+ */
+
 export function mapCardSearchesToCards(searches) {
     // Making the assumption that backend will send in the same order all the time.
     return searches.map(x => ({

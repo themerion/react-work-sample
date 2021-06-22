@@ -1,4 +1,4 @@
-import Config from "../config";
+import Config from "../../config";
 
 /**
  * Sends a search request to the api-server. 

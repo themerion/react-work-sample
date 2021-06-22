@@ -7,8 +7,8 @@ import CardList from "./components/CardList/CardList";
 import LoadingTextField from "./components/LoadingTextField/LoadingTextField";
 
 // Functions
-import { cardSearch } from "./services/CardSearchService";
-import { mapCardSearchesToCards } from "./mappers/mapCardSearchesToCards";
+import { cardSearch } from "./functions/card-search/cardSearch";
+import { mapCardSearchesToCards } from "./functions/card-search/mapCardSearchesToCards";
 
 import styles from "./App.module.css";
 
