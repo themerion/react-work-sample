@@ -14,3 +14,17 @@
 
   margin-bottom: 5px;
 }
+
+.noContentMsg {
+  font-family: 'Averta Std';
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17.3px;
+  color: white;
+
+  margin-top: 20px;
+
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}

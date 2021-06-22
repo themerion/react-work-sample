@@ -29,7 +29,7 @@
 /* As always, the loader library messes up sizes and becomes bigger than it should be.
 Using a wrapper and aboslute position to contain it, and prevent accidental resizing of the parent */
 .loader {
-    margin-right: 10px;
+    margin-right: 8px;
     width: 30px;
     position: relative;
 }

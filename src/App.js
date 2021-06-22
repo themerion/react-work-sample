@@ -44,9 +44,9 @@ function App() {
     let noContentMsg = null;
     if (!state.isSearching) {
         noContentMsg =
-            state.searchError       ? <p>Something went wrong during the search. Please try again.</p> :
-            (!state.hasSearched)    ? <p>Please type something in the search field.</p> :
-            state.cards.length == 0 ? <p>Found no results</p> :
+            state.searchError       ? "Something went wrong during the search. Please try again" :
+            (!state.hasSearched)    ? "Please type something in the search field." :
+            state.cards.length == 0 ? "Found no results" :
             null;
     }
 
@@ -55,7 +55,7 @@ function App() {
             <div className={styles.textField_title}>Search</div>
             <LoadingTextField onChange={searchFieldUpdated_Debounced} isLoading={state.isSearching}/>
 
-            {noContentMsg}
+            {noContentMsg && <div className={styles.noContentMsg}>{noContentMsg}</div>}
             {showCards && <CardList cards={state.cards} />}
         </div>
     );
