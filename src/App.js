@@ -1,5 +1,5 @@
 // Libs
-import React, { useReducer, useRef } from "react";
+import React, { useReducer, useRef, useCallback } from "react";
 import _ from "underscore";
 
 // Components
@@ -34,7 +34,7 @@ function App() {
     const lastSearchRef = useRef(0);
 
     const debounceTime = 300;
-    const searchFieldUpdated_Debounced = _.debounce(searchFieldUpdated, debounceTime);
+    const searchFieldUpdatedCallback = useCallback(_.debounce(searchFieldUpdated, debounceTime), []);
 
     // ---Rendering---
     // ------------------------------------------------------
@@ -53,7 +53,7 @@ function App() {
     return (
         <div className={styles.App}>
             <div className={styles.textField_title}>Search</div>
-            <LoadingTextField onChange={searchFieldUpdated_Debounced} isLoading={state.isSearching}/>
+            <LoadingTextField onChange={searchFieldUpdatedCallback} isLoading={state.isSearching}/>
 
             {noContentMsg && <div className={styles.noContentMsg}>{noContentMsg}</div>}
             {showCards && <CardList cards={state.cards} />}
